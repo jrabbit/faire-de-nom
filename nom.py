@@ -1,7 +1,6 @@
 from github2.client import Github
 github = Github()
-term = 'Chimera'
-def do_search(term):
+def do_search(term='Chimera'):
     repositories = github.repos.search(term)
     lang_count= {}
     desc = []
@@ -14,7 +13,8 @@ def do_search(term):
     return lang_count, urls, desc
 
 if __name__ == '__main__':
-    langs, urls, desc = do_search(term)
+    import sys
+    langs, urls, desc = do_search(sys.argv[1])
     print langs
     for k,v in zip(desc, urls):
         print k, v
