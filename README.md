@@ -1,3 +1,5 @@
+Faire De Nom means to name. It is a tool to help you name a project.
+
 For Work
 ---------
 Searches github for potential project names to check if they're in use.
