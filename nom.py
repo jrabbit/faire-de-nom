@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# (c) 2011 Jrabbit Under GPL v3 or later.
 from github2.client import Github
 github = Github()
 def do_search(term='Chimera'):
