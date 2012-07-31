@@ -1,17 +1,16 @@
 #!/usr/bin/env python
 # (c) 2011 Jrabbit Under GPL v3 or later.
-from github2.client import Github
+from github import Github
 github = Github()
 def do_search(term='Chimera'):
-    repositories = github.repos.search(term)
+    repositories = github.legacy_search_repos(term)
     lang_count= {}
     desc = []
     urls = []
     for repo in repositories:
-        lang_count[repo['language']] = lang_count.get(repo['language'], 0) +1
-        
-        urls.append(repo['url'])
-        desc.append(repo['description'])
+        lang_count[repo.language] = lang_count.get(repo.language, 0) +1
+        urls.append(repo.url)
+        desc.append(repo.description)
     return lang_count, urls, desc
 
 if __name__ == '__main__':
